@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Required meta tags -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS / JS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='style/style.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='style/form.css')}}"
+    />
+    <!--  -->
+    <link
+      rel="shortcut icon"
+      href="{{url_for('static',filename='favicon.ico') }}"
+    />
+    <title>Stroke Prediction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="logo">
+        <h4>Stroke Prediction</h4>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a
+            href="{{url_for('static',filename='pdf/report.pdf')}}"
+            >Report</a
+          >
+        </li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+    <!-- Form for Prediction -->
+    <div class="outer">
+      <div class="container">
+        <div class="title">Prediction</div>
+        <form action="{{ url_for('predict') }}" method="POST" name="predict">
+          <div class="user-details">
+            <!-- Gender Box -->
+            <div class="input-box">
+              <span class="details">Gender</span>
+              <select
+                name="gender"
+                id="gender"
+                required="required"
+                onchange="getSelectValue()"
+              >
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <!-- Age -->
+            <div class="input-box">
+              <span class="details">Age</span>
+              <input
+                type="number"
+                name="age"
+                id="age"
+                required
+                placeholder="Enter Your Age"
+                min="0"
+                max="150"
+              />
+            </div>
+            <!-- Hypertension -->
+            <div class="input-box">
+              <span class="details">Hypertension</span>
+              <select
+                name="hypertension"
+                id="hypertension"
+                required="required"
+                onchange="getSelectValue()"
+              >
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <!-- Heart Disease -->
+            <div class="input-box">
+              <span class="details">Heart Disease</span>
+              <select
+                name="heart_disease"
+                id="heart_disease"
+                required="required"
+                onchange="getSelectValue()"
+              >
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <!--Marital Status-->
+            <div class="input-box">
+              <span class="details">Marital Status</span>
+              <select
+                name="ever_married"
+                id="ever_married"
+                required="required"
+                onchange="getSelectValue()"
+              >
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <!-- Residence Type-->
+            <div class="input-box">
+              <span class="details">Residence Type</span>
+              <select
+                name="Residence_type"
+                id="Residence_type"
+                required="required"
+                onchange="getSelectValue()"
+              >
+                <option value="urban">Urban</option>
+                <option value="rural">Rural</option>
+              </select>
+            </div>
+
+            <!-- Work Type -->
+            <div class="input-box">
+              <span class="details">Work Type</span>
+              <select
+                name="work_type"
+                id="work_type"
+                required="required"
+                onchange="getSelectValue()"
+              >
+                <option value="private">Private</option>
+                <option value="self employed">Self Employed</option>
+                <option value="never work">Never Work</option>
+                <option value="goverment job">Goverment Job</option>
+                <option value="Children">children</option>
+              </select>
+            </div>
+            <!-- Golucose Level -->
+            <div class="input-box">
+              <span class="details">Body Glucose Level</span>
+              <input
+                type="number"
+                name="avg_glucose_level"
+                id="avg_glucose_level"
+                required
+                placeholder="Enter Your Golucose Level"
+                onchange="getSelectValue()"
+                min="0.0"
+              />
+            </div>
+            <!-- BMI -->
+            <div class="input-box">
+              <span class="details">Body Mass Index</span>
+              <input
+                type="number"
+                name="bmi"
+                id="bmi"
+                required
+                placeholder="Enter Your Body Mass"
+                min="0.0"
+                onchange="getSelectValue()"
+              />
+            </div>
+            <!-- Somke -->
+            <div class="input-box">
+              <span class="details">Smoking Status</span>
+              <select
+                name="smoking_status"
+                id="smoking_status"
+                required="required"
+                onchange="getSelectValue()"
+              >
+                <option value="never smoke">Never Somked</option>
+                <option value="formerly somked">Formerly Smoked</option>
+                <option value="somkes">Smoke</option>
+                <option value="unknown">Unknown</option>
+              </select>
+            </div>
+          </div>
+          <div class="button">
+            <input type="submit" value="Prediction" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="{{url_for('static',filename='style/app.js')}}"></script>
