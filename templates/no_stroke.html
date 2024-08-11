@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="{{url_for('static',filename='favicon.ico') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='style/result.css')}}"
+    />
+    <title>No Stroke</title>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="container">
+        <div class="logo">
+          <img
+            src="{{url_for('static',filename='notroke.gif')}}"
+            alt="No stroke"
+          />
+        </div>
+        <div class="inner-con">
+          <div class="title">
+            <h2>
+              You have been diagnosed with no Stroke Risk. Congratulations
+            </h2>
+            <br />
+            <p>
+              The algorithm has diagnosed you with no Stroke Risk based on your
+              inputs.
+              <br />However it might be better to talk to a doctor regardless.
+            </p>
+            <p>This Model Accuracy = <strong>98.23%</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  var timer = setTimeout(function () {
+    window.location = "/";
+  }, 10000);
+</script>

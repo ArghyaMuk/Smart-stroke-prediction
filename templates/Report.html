@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{url_for('static',filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style/form.css')}}">
+    <title>Stroke Prediction Report</title>
+</head>
+<body>
+    <iframe src="/static/pdf/report.pdf" width="70%" height="700px"></iframe>
+</body>
+</html>

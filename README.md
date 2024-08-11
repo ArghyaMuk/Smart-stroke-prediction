@@ -1,2 +1,3 @@
 # Smart-stroke-prediction
-Heart-stroke-prediction
+
+https://stroke-prediction-m.herokuapp.com/

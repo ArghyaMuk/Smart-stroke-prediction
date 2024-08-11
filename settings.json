@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "/path_to_python/python3",
+    "python.autoComplete.extraPaths": [
+        "/path_to_pip/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/path_to_pip/site-packages"
+    ],
+}
